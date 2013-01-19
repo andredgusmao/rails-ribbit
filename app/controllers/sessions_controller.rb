@@ -7,11 +7,11 @@ class SessionsController < ApplicationController
   	user = User.find_by_username(params[:username])
   	if user && user.authenticate(params[:password])
   		session[:userid] = user.id
-  		redirect_to root_url, notice: "Logado!"
-	else 
-		flash[:error] = "Usuário ou senha Incorretos"
-		redirect_to root_url
-	end
+      redirect_to :controller => 'users', :action => 'show', :id => user.id, notice: "Logado!"
+    else 
+      flash[:error] = "Usuário ou senha Incorretos"
+  		redirect_to root_url
+    end
   end
 
   def destroy
