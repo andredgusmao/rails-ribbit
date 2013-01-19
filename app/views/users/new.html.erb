@@ -1,6 +1,6 @@
 <img src="/gfx/frog.jpg">
 <div class="panel right">
-	<h1>New to Ribbit?</h1>
+	<h1>Novo no Ribbit?</h1>
 	<%= form_for @user do |f| %>
 		<% if @user.errors.any? %>
 			<ul>
@@ -10,10 +10,10 @@
 			</ul>
 		<% end %>
 		<%= f.text_field :email, placeholder: "email"%>
-		<%= f.text_field :username, placeholder: "username"%>
-		<%= f.text_field :name, placeholder: "name" %>
-		<%= f.password_field :password, placeholder: "password"%>
-		<%= f.password_field :password_confirmation, placeholder: "password"%>
+		<%= f.text_field :username, placeholder: "usuário"%>
+		<%= f.text_field :name, placeholder: "nome" %>
+		<%= f.password_field :password, placeholder: "senha"%>
+		<%= f.password_field :password_confirmation, placeholder: "confirme a senha"%>
 		<%= f.submit "Criar Conta" %>
 	<% end %>
 </div>
