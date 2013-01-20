@@ -11,7 +11,7 @@ class RibbitsController < ApplicationController
 	end
 
 	def index
-		@ribbits = Ribbit.all include :user
-		@ribbit Ribbit.new
+		@ribbits = Ribbit.all include: :user
+		@ribbit = Ribbit.new
 	end
 end
