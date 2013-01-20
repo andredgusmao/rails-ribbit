@@ -1,5 +1,4 @@
 class RibbitsController < ApplicationController
-
 	def create
 		@ribbit = Ribbit.new(params[:ribbit])
 		@ribbit.user_id = current_user.id
@@ -9,5 +8,10 @@ class RibbitsController < ApplicationController
 		  flash[:error] = "Problem!"
 		  redirect_to current_user
 		end
-	end	
+	end
+
+	def index
+		@ribbits = Ribbit.all include :user
+		@ribbit Ribbit.new
+	end
 end
