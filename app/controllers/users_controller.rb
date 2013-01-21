@@ -4,8 +4,7 @@ class UsersController < ApplicationController
 		@user = User.new
 	end
 	def create 
-		@user = User.new(params[:user])
-		puts @user
+		@user = User.new(params[:user])	
 		if @user.save
 			session[:user_id] = @user.id
 			redirect_to @user, notice: "Obrigado por se Cadastrar no Ribbit!"

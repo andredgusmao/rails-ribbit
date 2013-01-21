@@ -1,5 +1,7 @@
 RibbitApp::Application.routes.draw do
   
+  resources :relationships
+
   resources :ribbits
 
   get "sessions/new"
