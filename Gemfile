@@ -5,7 +5,23 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+# If you use a different database in development, hide it from Cloud Foundry.
+group :development do
+ gem 'sqlite3'
+end
+
+# Rails 3.1 can use the latest mysql2 gem.
+group :production do
+ gem 'mysql2'
+end
+
+# For Ruby 1.9 Cloud Foundry requires a tweak to the jquery-rails gem.
+# gem 'jquery-rails'
+gem 'cloudfoundry-jquery-rails'
+
+# For Ruby 1.9 Cloud Foundry requires a tweak to devise.
+# Uncomment next line if you plan to use devise.
+gem 'cloudfoundry-devise', :require => 'devise'
 
 
 # Gems used only for assets and not required
@@ -20,7 +36,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+#gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
